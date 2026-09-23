@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sanjay | CSE & Cybersecurity Portfolio</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #080808;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 8%;
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #00ff88;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: #bbb;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00ff88;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 110px 20px 50px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 9vw, 85px);
+      margin-bottom: 8px;
+    }
+
+    .hero h1 span {
+      color: #00ff88;
+    }
+
+    .hero h2 {
+      font-size: clamp(19px, 4vw, 30px);
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: auto;
+      color: #999;
+      font-size: 17px;
+    }
+
+    .location {
+      margin-top: 15px;
+      color: #00ff88;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: 1px solid #00ff88;
+      transition: 0.3s;
+    }
+
+    .btn.primary {
+      background: #00ff88;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 90px 8%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 35px;
+      margin-bottom: 35px;
+    }
+
+    .section-title span {
+      color: #00ff88;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-text {
+      color: #bbb;
+      max-width: 850px;
+      font-size: 17px;
+    }
+
+    .info {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 15px;
+    }
+
+    .info-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .info-card strong {
+      color: #00ff88;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* ================= SKILLS ================= */
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 15px;
+    }
+
+    .skill {
+      padding: 20px;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      border-color: #00ff88;
+      transform: translateY(-5px);
+    }
+
+    /* ================= PROJECTS ================= */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background: #111;
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #222;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: #00ff88;
+    }
+
+    .project h3 {
+      margin-bottom: 10px;
+      color: #00ff88;
+    }
+
+    .project p {
+      color: #aaa;
+      margin-bottom: 12px;
+    }
+
+    .project .tech {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .project a {
+      color: #00ff88;
+      font-weight: bold;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 12px;
+      background: #17251e;
+      color: #00ff88;
+    }
+
+    .status.future {
+      background: #202020;
+      color: #aaa;
+    }
+
+    /* ================= JOURNEY ================= */
+
+    .timeline {
+      border-left: 2px solid #00ff88;
+      padding-left: 25px;
+    }
+
+    .timeline-item {
+      margin-bottom: 30px;
+    }
+
+    .timeline-item h3 {
+      color: #00ff88;
+      margin-bottom: 5px;
+    }
+
+    .timeline-item p {
+      color: #aaa;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-box {
+      text-align: center;
+      background: #111;
+      border: 1px solid #222;
+      padding: 40px 20px;
+      border-radius: 15px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .email {
+      color: #00ff88;
+      font-size: 18px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #222;
+      color: #777;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 650px) {
+
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav ul {
+        gap: 9px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ================= NAVIGATION ================= -->
+
+  <nav>
+
+    <div class="logo">
+      Sanjay.
+    </div>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+
+  <!-- ================= HERO ================= -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Hi, I'm <span>Sanjay</span>
+      </h1>
+
+      <h2>
+        CSE Student & Cybersecurity Enthusiast
+      </h2>
+
+      <p>
+        Computer Science Engineering student building my skills
+        in programming, Linux, networking, cybersecurity and AI.
+      </p>
+
+      <div class="location">
+        📍 Hyderabad, India
+      </div>
+
+      <div class="buttons">
+
+        <a class="btn primary" href="#projects">
+          View Projects
+        </a>
+
+        <a class="btn" href="#contact">
+          Contact Me
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      About <span>Me</span>
+    </h2>
+
+    <p class="about-text">
+
+      I'm Sanjay, a first-year Computer Science Engineering
+      student from Hyderabad.
+
+      <br><br>
+
+      I'm currently building my foundation in C programming,
+      Python, Linux, networking and cybersecurity.
+
+      <br><br>
+
+      My main career interest is cybersecurity, especially
+      security operations, threat detection and the use of
+      AI in cybersecurity.
+
+      <br><br>
+
+      I'm focused on learning by building small projects,
+      practicing through hands-on labs and continuously
+      improving my technical skills.
+
+    </p>
+
+
+    <div class="info">
+
+      <div class="info-card">
+        <strong>Name</strong>
+        Sanjay
+      </div>
+
+      <div class="info-card">
+        <strong>Education</strong>
+        B.Tech — Computer Science Engineering
+      </div>
+
+      <div class="info-card">
+        <strong>College</strong>
+        KG Reddy College of Engineering & Technology
+      </div>
+
+      <div class="info-card">
+        <strong>Location</strong>
+        Hyderabad, India
+      </div>
+
+      <div class="info-card">
+        <strong>Graduation</strong>
+        2030
+      </div>
+
+      <div class="info-card">
+        <strong>Career Focus</strong>
+        Cybersecurity + AI
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SKILLS ================= -->
+
+  <section id="skills">
+
+    <h2 class="section-title">
+      My <span>Skills</span>
+    </h2>
+
+    <div class="skills">
+
+      <div class="skill">
+        C Programming
+      </div>
+
+      <div class="skill">
+        Python
+      </div>
+
+      <div class="skill">
+        HTML
+      </div>
+
+      <div class="skill">
+        CSS
+      </div>
+
+      <div class="skill">
+        Linux
+      </div>
+
+      <div class="skill">
+        Networking
+      </div>
+
+      <div class="skill">
+        Cybersecurity Fundamentals
+      </div>
+
+      <div class="skill">
+        Git & GitHub
+      </div>
+
+      <div class="skill">
+        AI Tools
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PROJECTS ================= -->
+
+  <section id="projects">
+
+    <h2 class="section-title">
+      My <span>Projects</span>
+    </h2>
+
+
+    <div class="projects">
+
+
+      <!-- PROJECT 1 -->
+
+      <div class="project">
+
+        <span class="status">
+          Completed
+        </span>
+
+        <h3>
+          Simple Calculator
+        </h3>
+
+        <p>
+          A beginner-friendly calculator that performs
+          basic arithmetic operations including addition,
+          subtraction, multiplication and division.
+        </p>
+
+        <p class="tech">
+          HTML • CSS • JavaScript
+        </p>
+
+        <!-- Add your GitHub project URL here -->
+        <a href="#" target="_blank">
+          View Project →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 2 -->
+
+      <div class="project">
+
+        <span class="status">
+          Completed
+        </span>
+
+        <h3>
+          Password Strength Checker
+        </h3>
+
+        <p>
+          A cybersecurity-focused project that evaluates
+          password strength using length, uppercase letters,
+          lowercase letters, numbers and special characters.
+        </p>
+
+        <p class="tech">
+          HTML • CSS • JavaScript
+        </p>
+
+        <!-- Add your GitHub project URL here -->
+        <a href="#" target="_blank">
+          View Project →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 3 -->
+
+      <div class="project">
+
+        <span class="status">
+          Beginner Project
+        </span>
+
+        <h3>
+          Digital Clock
+        </h3>
+
+        <p>
+          A simple real-time digital clock created while
+          practicing JavaScript and working with dates
+          and time.
+        </p>
+
+        <p class="tech">
+          HTML • CSS • JavaScript
+        </p>
+
+        <!-- Add your GitHub project URL here -->
+        <a href="#" target="_blank">
+          View Project →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 4 -->
+
+      <div class="project">
+
+        <span class="status">
+          Beginner Project
+        </span>
+
+        <h3>
+          To-Do List
+        </h3>
+
+        <p>
+          A simple task management application for adding,
+          completing and removing daily tasks.
+        </p>
+
+        <p class="tech">
+          HTML • CSS • JavaScript
+        </p>
+
+        <!-- Add your GitHub project URL here -->
+        <a href="#" target="_blank">
+          View Project →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 5 -->
+
+      <div class="project">
+
+        <span class="status">
+          Beginner Project
+        </span>
+
+        <h3>
+          Number Guessing Game
+        </h3>
+
+        <p>
+          A small programming project where the user tries
+          to guess a randomly generated number.
+        </p>
+
+        <p class="tech">
+          Python
+        </p>
+
+        <!-- Add your GitHub project URL here -->
+        <a href="#" target="_blank">
+          View Project →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 6 -->
+
+      <div class="project">
+
+        <span class="status">
+          Beginner Project
+        </span>
+
+        <h3>
+          Python Calculator
+        </h3>
+
+        <p>
+          A command-line calculator created while learning
+          Python variables, operators, input and conditional
+          statements.
+        </p>
+
+        <p class="tech">
+          Python
+        </p>
+
+        <!-- Add your GitHub project URL here -->
+        <a href="#" target="_blank">
+          View Project →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 7 -->
+
+      <div class="project">
+
+        <span class="status future">
+          Coming Soon
+        </span>
+
+        <h3>
+          Linux & Cybersecurity Labs
+        </h3>
+
+        <p>
+          Hands-on cybersecurity learning involving Linux,
+          networking, security fundamentals and practical labs.
+        </p>
+
+        <p class="tech">
+          Linux • Networking • Cybersecurity
+        </p>
+
+        <a href="#">
+          Coming Soon →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 8 -->
+
+      <div class="project">
+
+        <span class="status future">
+          Coming Soon
+        </span>
+
+        <h3>
+          Python Security Tool
+        </h3>
+
+        <p>
+          A future cybersecurity project built with Python
+          to practice security automation and problem solving.
+        </p>
+
+        <p class="tech">
+          Python • Cybersecurity
+        </p>
+
+        <a href="#">
+          Coming Soon →
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= JOURNEY ================= -->
+
+  <section id="journey">
+
+    <h2 class="section-title">
+      My <span>Journey</span>
+    </h2>
+
+    <div class="timeline">
+
+
+      <div class="timeline-item">
+
+        <h3>
+          2026 — Starting Point
+        </h3>
+
+        <p>
+          Started B.Tech CSE at KG Reddy College of Engineering
+          & Technology and began learning programming,
+          Linux, networking and cybersecurity.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <h3>
+          2027 — Skill Building
+        </h3>
+
+        <p>
+          Plan to strengthen programming and networking,
+          complete cybersecurity labs and build more
+          practical projects.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <h3>
+          2028 — Advanced Learning
+        </h3>
+
+        <p>
+          Plan to focus more deeply on security operations,
+          threat detection, cybersecurity tools and
+          AI-assisted security.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <h3>
+          2029 — Industry Preparation
+        </h3>
+
+        <p>
+          Build a stronger project portfolio, gain practical
+          experience and prepare for cybersecurity internships
+          and professional opportunities.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <h3>
+          2030 — Graduation
+        </h3>
+
+        <p>
+          Graduate with a strong foundation in Computer Science
+          and practical cybersecurity experience.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section id="contact">
+
+    <h2 class="section-title">
+      Contact <span>Me</span>
+    </h2>
+
+    <div class="contact-box">
+
+      <p>
+        Interested in connecting, collaborating or discussing
+        technology and cybersecurity?
+      </p>
+
+      <a
+        class="email"
+        href="mailto:sanjayabbagani8@gmail.com"
+      >
+        sanjayabbagani8@gmail.com
+      </a>
+
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="mailto:sanjayabbagani8@gmail.com"
+        >
+          Email Me
+        </a>
+
+        <!-- Replace # with your GitHub profile -->
+        <a
+          class="btn"
+          href="#"
+          target="_blank"
+        >
+          GitHub
+        </a>
+
+        <!-- Replace # with your LinkedIn profile -->
+        <a
+          class="btn"
+          href="#"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <p>
+      © 2026 Sanjay | CSE Student & Cybersecurity Enthusiast
+    </p>
+
+  </footer>
+
+
+</body>
+
+</html>
